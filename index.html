@@ -13,6 +13,27 @@
   <link rel="stylesheet" href="https://fonts.google.com/specimen/Plus+Jakarta+Sans">
   <title> Notifications page</title>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const markButton = document.querySelector('.mark-button');
+      const unreadNotifications = document.querySelectorAll('.unread .red-dot');
+      const unreadNotificationSections = document.querySelectorAll('.unread .noti1, .unread .noti2, .unread .noti3');
+
+      markButton.addEventListener('click', function() {
+        unreadNotifications.forEach(notification => {
+          notification.style.display = 'none'; // Hide red dot
+        });
+
+        const unreadSection = document.querySelector('.unread');
+        unreadSection.style.backgroundColor = 'white'; // Change background color
+
+        unreadNotificationSections.forEach(section => {
+          section.style.backgroundColor = 'white'; // Change background color of noti1, noti2, noti3
+        });
+      });
+    });
+  </script>
+
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   
 </head>
@@ -28,7 +49,7 @@
       <div class="drop-down">
         <div class="unread">
           <div class="noti1">
-            <img  src="./avatar-mark-webber.webp" alt="mark webber">
+            <img  src="/avatar-mark-webber.webp" alt="mark webber">
             <h3 class="first-noti">
             <span class="span1">Mark Webber</span> reacted to your recent post <span class="span2">My first tournament today!</span> 
             </h3><div class="red-dot"></div>
@@ -36,7 +57,7 @@
            <p>1m ago</p>
            </div>
            <div class="noti2">
-            <img src="./avatar-angela-gray.webp" alt="Angela">
+            <img src="/avatar-angela-gray.webp" alt="Angela">
             <h3 class="second-noti"> <span class="span1">Angela Gray </span>followed you</h3>
             <div class="red-dot"></div>
             <p>5m ago</p>
